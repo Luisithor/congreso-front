@@ -1,0 +1,287 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #2980b9;
+  --text-color: #333333;
+  --light-text: #7f8c8d;
+  --background-color: #ffffff;
+  --card-background: #f8f9fa;
+  --border-color: #e9ecef;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 80px;
+}
+
+.content-wrapper {
+  width: 100%;
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  min-height: 70vh; 
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 25px 40px;
+  background: var(--primary-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 70px; 
+  width: auto;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 30px; 
+  text-align: center;
+}
+
+.text-content {
+  margin-bottom: 40px;
+}
+
+.congress-title {
+  font-size: 2.5rem; 
+  font-weight: 300;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.congress-subtitle {
+  font-size: 1.3rem;
+  color: var(--accent-color);
+  margin-bottom: 25px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.welcome-message {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 35px;
+  font-weight: 300;
+}
+
+.content-separator {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  margin: 25px auto;
+  border: none;
+}
+
+.action-section {
+  margin-top: 25px;
+}
+
+.entry-button {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(41, 128, 185, 0.3);
+  margin: 10px 0;
+}
+
+.entry-button:hover {
+  background: #2471a3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(41, 128, 185, 0.4);
+}
+
+.entry-button:active {
+  transform: translateY(0);
+}
+
+.footer {
+  padding: 25px 40px;
+  background: var(--card-background);
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-text {
+  color: var(--light-text);
+  font-size: 0.95rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 15px;
+    padding-top: 70px; 
+  }
+  
+  .content-wrapper {
+    min-height: 65vh;
+    border-radius: 15px;
+  }
+  
+  .header {
+    padding: 20px;
+  }
+  
+  .logos-container {
+    gap: 30px;
+  }
+  
+  .logo {
+    height: 55px;
+  }
+  
+  .main-content {
+    padding: 30px 20px;
+  }
+  
+  .congress-title {
+    font-size: 2rem;
+  }
+  
+  .congress-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .welcome-message {
+    font-size: 1rem;
+  }
+  
+  .entry-button {
+    padding: 14px 32px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 10px;
+    min-height: calc(100vh - 70px);
+  }
+  
+  .header {
+    padding: 15px;
+  }
+  
+  .logos-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .logo {
+    height: 45px;
+  }
+  
+  .main-content {
+    padding: 25px 15px;
+  }
+  
+  .congress-title {
+    font-size: 1.6rem;
+  }
+  
+  .congress-subtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-message {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+  
+  .content-separator {
+    margin: 20px auto;
+  }
+  
+  .entry-button {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 260px;
+  }
+  
+  .footer {
+    padding: 20px 15px;
+  }
+  
+  .footer-text {
+    font-size: 0.85rem;
+  }
+}
+
+body.has-fixed-navbar .home-container {
+  padding-top: 80px; /* Ajusta según la altura de tu navbar */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .text-content {
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .action-section {
+    animation: fadeIn 1s ease-out 0.3s both;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.entry-button:focus {
+  outline: 3px solid rgba(41, 128, 185, 0.4);
+  outline-offset: 2px;
+}

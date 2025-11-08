@@ -1,0 +1,630 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #3498db;
+  --gold-color: #f39c12;
+  --silver-color: #bdc3c7;
+  --text-color: #2c3e50;
+  --text-light: #7f8c8d;
+  --background-color: #f8f9fa;
+  --card-background: #ffffff;
+  --border-color: #e9ecef;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  --border-radius: 16px;
+}
+
+.badge-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 20px;
+  padding-top: 100px;
+}
+
+.badge-page-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) translateX(-5px);
+}
+
+.badge-page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.badge-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.badge-container {
+  width: 380px;
+  height: 550px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.badge-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: var(--transition);
+}
+
+.badge-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.badge-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-hover);
+  overflow: hidden;
+}
+
+.badge-front {
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.badge-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.congress-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.logo-icon {
+  font-size: 2rem;
+}
+
+.congress-logo h2 {
+  font-size: 0.9rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.badge-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(45deg, #fff, #f39c12);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.participant-photo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.avatar-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  position: relative;
+}
+
+.photo-frame {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border: 2px solid var(--gold-color);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.participant-info {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.participant-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.participant-occupation {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+.badge-id {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  backdrop-filter: blur(10px);
+}
+
+.badge-footer {
+  margin-top: 20px;
+}
+
+.qr-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.qr-code {
+  font-size: 2rem;
+  opacity: 0.8;
+}
+
+.qr-placeholder span {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.badge-back {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: var(--text-color);
+  transform: rotateY(180deg);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.back-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.back-header h3 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.contact-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.badge-message {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.badge-message p {
+  margin: 0;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.5;
+  color: var(--text-light);
+}
+
+.security-features {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hologram {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #3498db, #9b59b6, #e74c3c);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.watermark {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  opacity: 0.5;
+  transform: rotate(-15deg);
+  font-weight: 300;
+}
+
+.badge-instructions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 25px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+.instruction-icon {
+  font-size: 1.2rem;
+}
+
+.badge-instructions p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.badge-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.print-button, .share-button {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 24px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.print-button:hover, .share-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.badge-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 20px;
+  color: white;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-left: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.badge-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 20px;
+  color: white;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 3rem;
+}
+
+.back-link {
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+.back-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.logo-icon svg {
+  width: 32px;
+  height: 32px;
+  opacity: 0.9;
+}
+
+.contact-icon svg {
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+}
+
+.qr-icon svg {
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
+}
+
+.print-button svg {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+.back-button svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.instruction-icon svg {
+  width: 24px;
+  height: 24px;
+  opacity: 0.9;
+}
+
+.error-icon svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.8;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.print-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.badge-instructions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.qr-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-button:hover svg,
+.print-button:hover svg {
+  opacity: 1;
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
+.instruction-icon {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+.badge-front .logo-icon svg,
+.badge-front .qr-icon svg {
+  color: white;
+}
+
+.badge-back .contact-icon svg {
+  color: var(--accent-color);
+}
+
+.back-button svg,
+.print-button svg {
+  color: currentColor;
+}
+
+.error-icon svg {
+  color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+  .logo-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .qr-icon svg {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .instruction-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .contact-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .qr-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .badge-page {
+    padding: 20px 15px;
+    padding-top: 90px;
+  }
+  
+  .badge-container {
+    width: 340px;
+    height: 500px;
+  }
+  
+  .badge-page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .back-button {
+    position: relative;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 480px) {
+  .badge-page {
+    padding: 15px 10px;
+    padding-top: 80px;
+  }
+  
+  .badge-container {
+    width: 300px;
+    height: 450px;
+  }
+  
+  .badge-face {
+    padding: 20px;
+  }
+  
+  .badge-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .print-button, .share-button {
+    width: 100%;
+  }
+}
+
+@media print {
+  .badge-page {
+    background: white !important;
+    padding: 0 !important;
+  }
+  
+  .badge-page-header,
+  .badge-instructions,
+  .badge-actions {
+    display: none !important;
+  }
+  
+  .badge-container {
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+}
